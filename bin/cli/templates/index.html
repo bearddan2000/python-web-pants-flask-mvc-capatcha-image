@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+      <img src="static/image/out.jpeg" alt="capatcha-image">
+  </div>
+</div>
+  <div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <form action="/" method="post">
+            <fieldset>
+                <input type="hidden" name="provided" class="form-control input-lg" value={{capatcha}}>
+                <div class="form-group">
+                    <input type="text" name="guess" class="form-control input-lg"
+                           placeholder="Capatcha Guess" required="true" autofocus="true"/>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Guess"/>
+                    </div>
+               </div>
+            </fieldset>
+        </form>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              {{msg}}
+          </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock %}
